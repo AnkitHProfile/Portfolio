@@ -41,6 +41,11 @@ export default function Page() {
             About Me
           </button>
         </a>
+        <a href="/projects">
+          <button className="bg-purple-600 px-6 py-3 rounded-lg text-lg font-semibold hover:bg-purple-500 shadow-lg transition-all">
+            My Projects
+          </button>
+        </a>
       </motion.div>
     </div>
   );
