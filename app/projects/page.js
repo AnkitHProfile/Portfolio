@@ -7,21 +7,21 @@ const projects = [
   {
     title: "Steam Reviews Sentiment Analysis",
     description:
-      "A Machine Learning pipeline that scrapes Steam reviews, preprocesses the text, and performs sentiment analysis using Transformers.",
+      "A Machine Learning pipeline that scrapes Steam reviews, preprocesses text, and performs sentiment analysis using Transformers.",
     tech: ["Python", "NLP", "Transformers", "Pandas"],
     link: "#",
   },
   {
     title: "Bookstore Management System",
     description:
-      "A Spring Boot application implementing Factory Design Pattern for efficient book categorization and management.",
+      "A Spring Boot app implementing Factory Design Pattern for book management.",
     tech: ["Java", "Spring Boot", "MySQL"],
     link: "#",
   },
   {
     title: "AI-Powered Resume Analyzer",
     description:
-      "An AI system that scans resumes and ranks them based on job description relevance using NLP models.",
+      "An AI system ranking resumes based on job description relevance using NLP.",
     tech: ["Python", "Spacy", "TF-IDF", "Flask"],
     link: "#",
   },
@@ -43,7 +43,7 @@ export default function Projects() {
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all"
+            className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105 border border-gray-700 hover:border-blue-500"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.2 }}

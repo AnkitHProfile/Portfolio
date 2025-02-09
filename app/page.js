@@ -30,22 +30,24 @@ export default function Page() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1 }}
       >
-        <a href="/projects">
-          <button className="bg-blue-600 px-6 py-3 rounded-lg text-lg font-semibold hover:bg-blue-500 shadow-lg transition-all">
-            View My Work
-          </button>
-        </a>
-
-        <a href="/about">
-          <button className="bg-green-600 px-6 py-3 rounded-lg text-lg font-semibold hover:bg-green-500 shadow-lg transition-all">
-            About Me
-          </button>
-        </a>
-        <a href="/projects">
-          <button className="bg-purple-600 px-6 py-3 rounded-lg text-lg font-semibold hover:bg-purple-500 shadow-lg transition-all">
-            My Projects
-          </button>
-        </a>
+        {[
+          { text: "View My Work", color: "bg-blue-600", link: "/projects" },
+          { text: "About Me", color: "bg-green-600", link: "/about" },
+          { text: "My Projects", color: "bg-purple-600", link: "/projects" },
+        ].map((btn, index) => (
+          <motion.a
+            key={index}
+            href={btn.link}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <button
+              className={`${btn.color} px-6 py-3 rounded-lg text-lg font-semibold shadow-lg transition-all hover:shadow-lg hover:scale-110`}
+            >
+              {btn.text}
+            </button>
+          </motion.a>
+        ))}
       </motion.div>
     </div>
   );
