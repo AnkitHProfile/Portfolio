@@ -2,20 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Custom Styling */
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans);
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: #eaeaea;
+}
+
+/* Button Styling */
+.button-primary {
+  background-color: #2563eb;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+
+.button-primary:hover {
+  background-color: #1d4ed8;
+  transform: scale(1.05);
+}
+
+.button-secondary {
+  background-color: transparent;
+  border: 2px solid #fff;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+
+.button-secondary:hover {
+  background-color: #fff;
+  color: #1a1a2e;
 }

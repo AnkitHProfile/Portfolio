@@ -1,7 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";  // ✅ Ensure Navbar is imported
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,18 +14,17 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Ankit Hiremath | Portfolio",
-  description: "Portfolio showcasing projects, skills, and experience.",
+  description: "Portfolio showcasing expertise in AI, Data Science, and Cloud Technologies.",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-900 text-white flex flex-col min-h-screen`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white`}
       >
-        <Navbar />
-        <main className="flex-grow mt-16">{children}</main>
-        <Footer />
+        <Navbar /> {/* ✅ Navbar is now included */}
+        <main className="mt-16">{children}</main>
       </body>
     </html>
   );

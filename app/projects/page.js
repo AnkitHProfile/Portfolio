@@ -1,68 +1,56 @@
 "use client";
-
 import React from "react";
 import { motion } from "framer-motion";
 
 const projects = [
   {
-    title: "Steam Reviews Sentiment Analysis",
-    description:
-      "A Machine Learning pipeline that scrapes Steam reviews, preprocesses text, and performs sentiment analysis using Transformers.",
-    tech: ["Python", "NLP", "Transformers", "Pandas"],
-    link: "#",
+    title: "Gomoku",
+    technologies: "CNN Architecture, MongoDB, Game Analysis, Pooling, TensorFlow, Keras, SciPy",
+    duration: "October 2023 - November 2023",
+    description: [
+      "Constructed a CNN with 64-256 filters, achieving 25/30 wins on Gomocup data, surpassing Minimax, and leveraging MongoDB.",
+      "Recommended 3D CNN and advanced pooling techniques to enhance AI sophistication, strategic depth, and cognitive analysis."
+    ],
   },
   {
-    title: "Bookstore Management System",
-    description:
-      "A Spring Boot app implementing Factory Design Pattern for book management.",
-    tech: ["Java", "Spring Boot", "MySQL"],
-    link: "#",
+    title: "Bookstore",
+    technologies: "Java, Spring Boot, PostgreSQL, Maven, Thymeleaf, REST API Implementation",
+    duration: "August 2024 - September 2024",
+    description: [
+      "Devised a Java Spring Boot application with PostgreSQL, RESTful APIs, and secure authentication, boosting efficiency by 60%.",
+      "Applied Factory design patterns and created Thymeleaf interfaces, improving usability and maintainability by 35%."
+    ],
   },
   {
-    title: "AI-Powered Resume Analyzer",
-    description:
-      "An AI system ranking resumes based on job description relevance using NLP.",
-    tech: ["Python", "Spacy", "TF-IDF", "Flask"],
-    link: "#",
+    title: "RAG-Driven QA System",
+    technologies: "Transformers, Hugging Face, PyTorch, NumPy, Pandas, Scikit-learn",
+    duration: "May 2024 - July 2024",
+    description: [
+      "Implemented a RAG-based QA model with Transformers, PyTorch, and TensorFlow, achieving 95% precision on 10,000+ files.",
+      "Boosted model efficiency by 40% using encoding, response generation, and evaluation with Hugging Face and Scikit-learn."
+    ],
   },
 ];
 
 export default function Projects() {
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center py-10 px-6">
-      <motion.h1
-        className="text-5xl font-bold text-center mb-10"
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-        My Projects
-      </motion.h1>
-
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl">
+    <div className="min-h-screen bg-gradient-to-r from-gray-900 to-black text-white py-16 px-6 md:px-20">
+      <h1 className="text-4xl font-bold text-center mb-10">My Projects</h1>
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105 border border-gray-700 hover:border-blue-500"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.2 }}
+            whileHover={{ scale: 1.05 }}
+            className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl transition duration-300"
           >
-            <h2 className="text-2xl font-semibold text-blue-400">{project.title}</h2>
-            <p className="text-gray-300 mt-2">{project.description}</p>
-            <div className="mt-3 flex flex-wrap gap-2">
-              {project.tech.map((tech, i) => (
-                <span
-                  key={i}
-                  className="bg-blue-600 text-white px-3 py-1 text-sm rounded-lg"
-                >
-                  {tech}
-                </span>
+            <h2 className="text-2xl font-bold text-blue-400">{project.title}</h2>
+            <p className="italic text-gray-400">{project.technologies}</p>
+            <p className="text-sm text-gray-300 mb-2">{project.duration}</p>
+            <ul className="text-gray-300 list-disc pl-5 space-y-2">
+              {project.description.map((point, idx) => (
+                <li key={idx}>{point}</li>
               ))}
-            </div>
-            <a href={project.link} className="inline-block mt-4 text-blue-300 hover:text-blue-500">
-              View Project →
-            </a>
+            </ul>
           </motion.div>
         ))}
       </div>

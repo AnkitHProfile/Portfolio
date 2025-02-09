@@ -1,54 +1,43 @@
 "use client";
 
-import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function Page() {
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center px-6">
+    <section className="flex flex-col items-center justify-center min-h-screen text-center">
       <motion.h1
-        className="text-6xl font-bold text-center"
-        initial={{ opacity: 0, y: -50 }}
+        className="text-5xl md:text-6xl font-bold leading-tight text-gray-200"
+        initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        Ankit Hiremath
+        Transforming Data into Intelligence.
       </motion.h1>
 
       <motion.p
-        className="text-xl mt-4 text-gray-300 text-center max-w-2xl"
+        className="mt-4 text-lg md:text-xl text-gray-400"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.5 }}
+        transition={{ duration: 1, delay: 0.3 }}
       >
-        Engineer | Data Science Enthusiast | AI Researcher | Cloud Architect
+        Data Scientist | AI Researcher | Full Stack Developer | Cloud Architect
+        <br /> Passionate about Machine Learning, Cloud Technologies, and Scalable AI Solutions.
       </motion.p>
 
       <motion.div
         className="mt-6 flex space-x-4"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1 }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.5 }}
       >
-        {[
-          { text: "View My Work", color: "bg-blue-600", link: "/projects" },
-          { text: "About Me", color: "bg-green-600", link: "/about" },
-          { text: "My Projects", color: "bg-purple-600", link: "/projects" },
-        ].map((btn, index) => (
-          <motion.a
-            key={index}
-            href={btn.link}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <button
-              className={`${btn.color} px-6 py-3 rounded-lg text-lg font-semibold shadow-lg transition-all hover:shadow-lg hover:scale-110`}
-            >
-              {btn.text}
-            </button>
-          </motion.a>
-        ))}
+        <Link href="/projects">
+          <button className="button-primary">Explore My Work</button>
+        </Link>
+        <Link href="/Ankit-Hiremath-Resume.pdf" target="_blank">
+          <button className="button-secondary">View Resume</button>
+        </Link>
       </motion.div>
-    </div>
+    </section>
   );
 }

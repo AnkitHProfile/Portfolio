@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center px-6">
+    <div className="min-h-screen bg-white text-gray-900 flex flex-col items-center py-16 px-6">
       <motion.h1
-        className="text-5xl font-bold text-center mb-6"
+        className="text-5xl font-extrabold text-center mb-10"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
@@ -16,30 +16,54 @@ export default function About() {
       </motion.h1>
 
       <motion.p
-        className="text-lg text-gray-300 text-center max-w-2xl leading-relaxed"
+        className="text-lg text-gray-500 text-center max-w-3xl"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
       >
-        I am <span className="text-blue-400 font-semibold">Ankit Hiremath</span>, an aspiring 
-        <span className="text-green-400 font-semibold"> Data Scientist</span> with expertise in
-        <span className="text-yellow-400 font-semibold"> Machine Learning, AI, and Cloud Technologies.</span>
-        I am currently pursuing my 
-        <span className="text-purple-400 font-semibold"> Master’s in Computer Science at Syracuse University</span>,
-        with the goal of working at <span className="text-red-400 font-semibold">Google as a Data Scientist.</span>
+        I am Ankit Hiremath, a Data Scientist & AI Researcher with expertise in
+        Machine Learning, AI, and Cloud Computing.  
+        I am currently pursuing my Master’s in Computer Science at Syracuse University, 
+        with the goal of working as a Data Scientist.
       </motion.p>
 
-      <motion.div
-        className="mt-8 space-y-4 text-lg"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1 }}
-      >
-        <p>🎓 <strong>Education:</strong> MS in Computer Science, Syracuse University</p>
-        <p>💼 <strong>Experience:</strong> System Engineer at Tata Consultancy Services (2.8 Years)</p>
-        <p>🔬 <strong>Research:</strong> AI & Deep Learning Projects</p>
-        <p>📍 <strong>Location:</strong> Syracuse, NY, USA</p>
-      </motion.div>
+      <div className="mt-10 flex flex-col space-y-6 max-w-3xl">
+        <motion.div
+          className="p-4 bg-gray-100 rounded-lg shadow-sm"
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <strong>🎓 Education:</strong> MS in Computer Science, Syracuse University  
+        </motion.div>
+
+        <motion.div
+          className="p-4 bg-gray-100 rounded-lg shadow-sm"
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.2 }}
+        >
+          <strong>💼 Experience:</strong> 2.8 Years as a System Engineer at Tata Consultancy Services  
+        </motion.div>
+
+        <motion.div
+          className="p-4 bg-gray-100 rounded-lg shadow-sm"
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.4 }}
+        >
+          <strong>📊 Research:</strong> AI & Deep Learning Projects, including CNN-based Gomoku AI  
+        </motion.div>
+
+        <motion.div
+          className="p-4 bg-gray-100 rounded-lg shadow-sm"
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.6 }}
+        >
+          <strong>📍 Location:</strong> Syracuse, NY, USA  
+        </motion.div>
+      </div>
     </div>
   );
 }
